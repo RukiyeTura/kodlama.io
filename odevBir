@@ -1,0 +1,24 @@
+#1
+# string: karakterler bütünü için
+# integer: tam sayılar için
+# float: ondalıklı sayılar için
+# boolean: true-false 
+# list: array'ler için
+
+#2
+#butonlardaki yazılar için str
+#kurs tamamlama yüzdesi için int
+#seçimler için boolean (if isEnrolled = true {show the course})
+#kategori/eğitim vs verilerini barındırmak için list (?)
+
+#3
+#login
+kayitliMail = "example@abc.com"
+kayitliSifre = "1234"
+mail = input('mail: ')
+sifre = input('sifre: ')
+
+if (mail == kayitliMail and sifre == kayitliSifre):
+        print("Giris basarili")
+else:
+        print("Mail ya da sifre yanlis")
