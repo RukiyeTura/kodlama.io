@@ -1,0 +1,44 @@
+
+#isim ve soyisimle öğrenci ekle, kopyası olmasın, id'leri arraydeki indexleri olsun
+
+students = [] 
+while True:
+    name = input("Enter student's name (or 'q' to quit): ")
+    if name == 'q':
+        break 
+    surname = input("Enter student's surname: ")
+    fullName = name + ' ' + surname 
+    if fullName in [s[1] for s in students]:
+        print("Student already exists in the list. Skipping...")
+    else:
+        studentID = len(students) 
+        students.append((studentID, fullName)) 
+
+print("List of students:")
+for student in students:
+    print(f"ID: {student[0]}, Name: {student[1]}")
+
+
+#silinecek öğrencileri belirle
+
+deleteIDs = input("Enter comma-separated list of student IDs to delete: ")
+deleteIDs = deleteIDs.split(',')
+deleteIDs = [int(id.strip()) for id in deleteIDs]
+deleteIDs = set(deleteIDs) 
+
+#silinenleri at, kalan sağlar bizimdir onlarla liste yap
+
+newStudents = []
+for student in students:
+    if student[0] not in deleteIDs:
+        newStudents.append(student)
+
+students = newStudents 
+
+#kim kaldıysa yazdır
+
+print("Updated list of students:")
+for student in students:
+    print(f"ID: {student[0]}, Name: {student[1]}")
+ 
+
